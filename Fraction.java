@@ -3,8 +3,13 @@ public class Fraction {
     private int denominator;
 
     Fraction(int numerator, int denominator) {
-        this.numerator = numerator;
-        this.denominator = denominator;
+        try {
+            if(denominator == 0) throw new Exception("Division by zero");
+            this.numerator = numerator;
+            this.denominator = denominator;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Fraction plus(Fraction fraction) {
